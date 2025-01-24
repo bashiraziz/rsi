@@ -148,20 +148,14 @@ export default function RSICalculator() {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle>Manual RSI Calculator (Polygon API)</CardTitle>
-        <CardDescription>
+        <CardTitle>Manual RSI Calculator for stocks (Using Polygon API)
+          
+        </CardTitle>
+        
+          <CardDescription>
           Enter a stock symbol (e.g., AAPL) and click &quot;Set Symbol&quot;. Then click &quot;Fetch Data&quot; to calculate RSI.
         </CardDescription>
-        <CardDescription>
-          <a
-            href="https://www.investopedia.com/terms/r/rsi.asp"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-800 underline"
-          >
-            Learn more about RSI on Investopedia
-          </a>
-        </CardDescription>
+        
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="mb-4">
