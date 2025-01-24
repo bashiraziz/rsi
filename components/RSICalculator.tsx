@@ -150,7 +150,7 @@ export default function RSICalculator() {
       <CardHeader>
         <CardTitle>Manual RSI Calculator (Polygon API)</CardTitle>
         <CardDescription>
-          Enter a stock symbol (e.g., AAPL) and click "Set Symbol". Then click "Fetch Data" to calculate RSI.
+          Enter a stock symbol (e.g., AAPL) and click &quot;Set Symbol&quot;. Then click &quot;Fetch Data&quot; to calculate RSI.
         </CardDescription>
         <CardDescription>
           <a
@@ -181,16 +181,12 @@ export default function RSICalculator() {
         </form>
         <div className="mb-4">
           <label htmlFor="rsi-period" className="block text-sm font-medium text-gray-700 mb-1">
-            RSI Period (days)
+            Select desired RSI Period (days)
           </label>
           <Select onValueChange={handleRsiPeriodChange} value={rsiPeriod.toString()}>
             <SelectTrigger className="w-full">
               <SelectValue placeholder="Select RSI period" />
             </SelectTrigger>
-            <CardDescription>
-              <br></br>
-              RSI using 9, 14, 21, and 30 days can be dispalyed by selecting the desired number of days.
-            </CardDescription>
             <SelectContent>
               {RSI_PERIODS.map((period) => (
                 <SelectItem key={period} value={period.toString()}>
