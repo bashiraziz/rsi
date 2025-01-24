@@ -34,15 +34,25 @@ export async function GET(request: Request) {
       }
 
       if (data.results && data.results.length > 0) {
-        const pricesWithDates = data.results.map((result: any) => ({
+        interface Result {
+          t: number;
+          c: number;
+        }
+
+        const pricesWithDates = data.results.map((result: Result) => ({
           date: new Date(result.t).toISOString().split("T")[0],
           price: result.c,
         }))
 
         console.log("Raw price data:", JSON.stringify(pricesWithDates, null, 2))
 
-        const prices = pricesWithDates.map((entry) => entry.price)
-        const dates = pricesWithDates.map((entry) => entry.date)
+        interface PriceWithDate {
+          date: string;
+          price: number;
+        }
+
+        const prices: number[] = pricesWithDates.map((entry: PriceWithDate) => entry.price)
+        const dates: string[] = pricesWithDates.map((entry: PriceWithDate) => entry.date)
 
         return NextResponse.json({
           prices,
