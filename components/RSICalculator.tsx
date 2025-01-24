@@ -188,7 +188,8 @@ export default function RSICalculator() {
               <SelectValue placeholder="Select RSI period" />
             </SelectTrigger>
             <CardDescription>
-              RSI using 9. 14. 21, and 30 days can be dispalyed by selecting the desired number of days.
+              <br></br>
+              RSI using 9, 14, 21, and 30 days can be dispalyed by selecting the desired number of days.
             </CardDescription>
             <SelectContent>
               {RSI_PERIODS.map((period) => (
